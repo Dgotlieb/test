@@ -8,32 +8,32 @@ pipeline {
         }
         stage('Run backend') {
             steps {
-                sh 'nohup /usr/local/bin/python3 rest_app.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 rest_app.py &'
             }
         }
         stage('Run frontend') {
             steps {
-                sh 'nohup /usr/local/bin/python3 web_rest.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 web_rest.py &'
             }
         }
         stage('Run backend tests') {
             steps {
-                sh 'nohup /usr/local/bin/python3 backend_testing.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 backend_testing.py &'
             }
         }
         stage('Run frontend tests') {
             steps {
-                sh 'nohup /usr/local/bin/python3 frontend_testing.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 frontend_testing.py &'
             }
         }
         stage('Run combined tests') {
             steps {
-                sh 'nohup /usr/local/bin/python3 combined_testing.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 combined_testing.py &'
             }
         }
         stage('Clean environment') {
             steps {
-                sh 'nohup /usr/local/bin/python3 clean_environment.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 clean_environment.py &'
             }
         }
     }
