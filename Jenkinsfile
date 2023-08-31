@@ -18,17 +18,17 @@ pipeline {
         }
         stage('Run backend tests') {
             steps {
-                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 backend_testing.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 backend_test.py &'
             }
         }
         stage('Run frontend tests') {
             steps {
-                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 frontend_testing.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 frontend_test.py &'
             }
         }
         stage('Run combined tests') {
             steps {
-                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 combined_testing.py &'
+                sh 'nohup /Users/danielgotlieb/Downloads/firstProject/venv/bin/python3 combine_testing.py &'
             }
         }
         stage('Clean environment') {
