@@ -8,32 +8,32 @@ pipeline {
         }
         stage('Run backend') {
             steps {
-                sh 'nohup python rest_app.py &'
+                sh 'nohup /usr/local/bin/python3 rest_app.py &'
             }
         }
         stage('Run frontend') {
             steps {
-                sh 'nohup python web_rest.py &'
+                sh 'nohup /usr/local/bin/python3 web_rest.py &'
             }
         }
         stage('Run backend tests') {
             steps {
-                sh 'nohup python backend_testing.py &'
+                sh 'nohup /usr/local/bin/python3 backend_testing.py &'
             }
         }
         stage('Run frontend tests') {
             steps {
-                sh 'nohup python frontend_testing.py &'
+                sh 'nohup /usr/local/bin/python3 frontend_testing.py &'
             }
         }
         stage('Run combined tests') {
             steps {
-                sh 'nohup python combined_testing.py &'
+                sh 'nohup /usr/local/bin/python3 combined_testing.py &'
             }
         }
         stage('Clean environment') {
             steps {
-                sh 'nohup python clean_environment.py &'
+                sh 'nohup /usr/local/bin/python3 clean_environment.py &'
             }
         }
     }
